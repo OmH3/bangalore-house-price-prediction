@@ -13,7 +13,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-        const response = await fetch('http://localhost:5000/get-locations')
+        const response = await fetch('http://localhost:5000/api/get-locations')
         const data = await response.json()
         setPlaces(data.locations)
       }catch(error){
@@ -25,7 +25,7 @@ function App() {
 
   const estimatePrice = async()=>{
     try{
-      const response = await fetch('http://localhost:5000/predict-price',{
+      const response = await fetch('http://localhost:5000/api/predict-price',{
         method:'POST',
         headers:{
           'Content-Type' : 'application/json'

@@ -3,7 +3,7 @@ import util
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app,resources={r"/*": {"origins": "http://localhost:5173"}})
-@app.route('/get-locations', methods=['GET'])
+@app.route('/api/get-locations', methods=['GET'])
 def get_location_names():
     response = jsonify({
         'locations' : util.get_location_names()
@@ -12,7 +12,7 @@ def get_location_names():
     print(response)
     return response
 
-@app.route('/predict-price',methods=['POST'])
+@app.route('/api/predict-price',methods=['POST'])
 def predict_home_price():
     data = request.json
     total_sqft = float(data['total_sqft'])
