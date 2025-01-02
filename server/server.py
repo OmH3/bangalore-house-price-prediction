@@ -2,7 +2,12 @@ from flask import Flask, request, jsonify
 import util
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app,resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app,resources={r"/*": {"origins": "https://bhp-ksql0ciaf-om-harshs-projects.vercel.app/"}})
+
+@app.route('/')
+def home():
+    return "Welcome to Bangalore House Price Prediction API"
+
 @app.route('/api/get-locations', methods=['GET'])
 def get_location_names():
     response = jsonify({
