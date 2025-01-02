@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import util
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app,resources={r"/*": {"origins": "https://bhp-ksql0ciaf-om-harshs-projects.vercel.app"}})
+CORS(app,resources={r"/*": {"origins": "https://bhp-j94c5r9zq-om-harshs-projects.vercel.app"}})
 
 @app.route('/')
 def home():
