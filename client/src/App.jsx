@@ -13,7 +13,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-        const response = await fetch('https://bhp-qmab.onrender.com/api/get-locations')
+        const response = await fetch('https://bhp-ls4m.onrender.com/api/get-locations')
         const data = await response.json()
         setPlaces(data.locations)
       }catch(error){
@@ -25,7 +25,7 @@ function App() {
 
   const estimatePrice = async()=>{
     try{
-      const response = await fetch('https://bhp-qmab.onrender.com/api/predict-price',{
+      const response = await fetch('https://bhp-ls4m.onrender.com/api/predict-price',{
         method:'POST',
         headers:{
           'Content-Type' : 'application/json'
