@@ -13,7 +13,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-        const response = await fetch('https://bhp-oini.onrender.com/api/get-locations')
+        const response = await fetch('http://127.0.0.1:5000/api/get-locations')
         const data = await response.json()
         setPlaces(data.locations)
       }catch(error){
@@ -25,7 +25,7 @@ function App() {
 
   const estimatePrice = async()=>{
     try{
-      const response = await fetch('https://bhp-oini.onrender.com/api/predict-price',{
+      const response = await fetch('http://127.0.0.1:5000/api/predict-price',{
         method:'POST',
         headers:{
           'Content-Type' : 'application/json'
@@ -80,7 +80,7 @@ function App() {
       </div>
       <div>
         <button onClick={estimatePrice}>Estimate Price</button>
-        <p>{price}</p>
+        <p>{price} Lacs</p>
       </div>
       <div>
 
